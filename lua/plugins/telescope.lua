@@ -8,7 +8,7 @@ return {
 			local telescope = require("telescope")
 			telescope.setup({
 				defaults = {
-					file_ignore_patterns = { "node_modules", ".git" },
+					file_ignore_patterns = { "node_modules", ".git", "poetry.lock" },
 					sorting_strategy = "ascending",
 					prompt_prefix = "> ",
 					mappings = {
