@@ -28,6 +28,8 @@ return {
 				},
 			})
 
+			-- shortcut for livegrepping in project
+			vim.keymap.set("n", "<leader>fh", require("telescope.builtin").live_grep, { noremap = true, silent = true })
 			-- Load fzf extension after setup
 			telescope.load_extension("fzf")
 		end,
