@@ -8,7 +8,7 @@ return {
 			local telescope = require("telescope")
 			telescope.setup({
 				defaults = {
-					file_ignore_patterns = { "node_modules", ".git", "poetry.lock" },
+					file_ignore_patterns = { "node_modules", ".git", "poetry.lock", "target/", "__pycache__/" },
 					sorting_strategy = "ascending",
 					prompt_prefix = "> ",
 					mappings = {
@@ -28,8 +28,9 @@ return {
 				},
 			})
 
-			-- shortcut for livegrepping in project
-			vim.keymap.set("n", "<leader>fh", require("telescope.builtin").live_grep, { noremap = true, silent = true })
+			-- -- shortcut for livegrepping in project
+			-- vim.keymap.set("n", "<leader>fh", require("telescope.builtin").live_grep, { noremap = true, silent = true })
+			-- Probably not needed since we are defining it in keymaps.lua already using which-key
 			-- Load fzf extension after setup
 			telescope.load_extension("fzf")
 		end,
