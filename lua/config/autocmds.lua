@@ -1,11 +1,6 @@
-vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+-- autosave files when switching windows
+vim.api.nvim_create_autocmd({ "InsertLeave","FocusLost", "BufLeave" }, {
 	pattern = { "*" },
-	command = "silent! wall",
-	nested = true,
-})
--- autosave godot files when switching windows
-vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, {
-	pattern = "*.gd",
 	command = "silent! w",
 })
 
