@@ -4,6 +4,13 @@ vim.api.nvim_create_autocmd({ "InsertLeave","FocusLost", "BufLeave" }, {
 	command = "silent! w",
 })
 
+vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+	pattern = { "*.py" },
+  callback = function()
+    vim.lsp.buf.format({ async = false })
+  end,
+})
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "gdscript",
 	callback = function()

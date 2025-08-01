@@ -1,8 +1,5 @@
--- LSP Server to use for Python.
--- Set to "basedpyright" to use basedpyright instead of pyright.
-vim.g.lazyvim_python_lsp = "pyright"
--- Set to "ruff_lsp" to use the old LSP implementation version.
-vim.g.lazyvim_python_ruff = "ruff"
-
+vim.o.number = true
+vim.o.relativenumber = false
+vim.opt.colorcolumn = "100"
 -- Showing both relative and absolute line numbers
 vim.o.statuscolumn = "%s %l %r"
