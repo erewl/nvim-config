@@ -9,10 +9,9 @@ local ok, godot = pcall(require, "godot")
 if ok then
 	local map = vim.keymap.set
 	local opts = { silent = true }
-	map("n", "<leader>dq", godot.debugger.quit, opts)
-	map("n", "<leader>dr", godot.debugger.debug, opts)
-	map("n", "<leader>dd", godot.debugger.debug_at_cursor, opts)
-	map("n", "<leader>dq", godot.debugger.quit, opts)
-	map("n", "<leader>dc", godot.debugger.continue, opts)
-	map("n", "<leader>ds", godot.debugger.step, opts)
+  -- Run and debug commands
+  map("n", "<leader>gr", godot.run, opts)       -- Run the project
+  map("n", "<leader>gl", godot.run_last, opts)  -- Run the last scene/project
+  map("n", "<leader>gd", godot.debug, opts)     -- Start debugger
+  map("n", "<leader>gs", godot.stop, opts)      -- Stop the running instance
 end
