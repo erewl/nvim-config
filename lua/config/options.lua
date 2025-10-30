@@ -1,3 +1,5 @@
+vim.opt.shell = "/Users/katrin.grunert/.local/bin/fish"
+
 vim.o.number = true
 vim.o.relativenumber = false
 vim.opt.colorcolumn = "100"
