@@ -1,8 +1,23 @@
-local wk = require("which-key")
+-- local wk = require("which-key")
+--
+-- wk.register({
+-- 	["<leader>fh"] = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
+-- })
 
-wk.register({
-	["<leader>fh"] = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
-})
+local builtin = require('telescope.builtin')
+
+vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Go to definition" })
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
+vim.keymap.set("n", "gR", builtin.lsp_references, { desc = "List references" })
+vim.keymap.set("n", "gi", builtin.lsp_implementations, { desc = "Go to implementation" })
+
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = bufnr, desc = "LSP Rename" })
+vim.keymap.set("n", "<leader>fh", "<cmd>Telescope live_grep<CR>", opts)
+  -- -- Go to definition
+  -- -- Go to implementation
+  -- vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+  -- Code actions
+vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {desc = "Code Action"})
 
 -- Godot debugger keymaps
 local ok, godot = pcall(require, "godot")

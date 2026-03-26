@@ -17,9 +17,9 @@ return {
     provider = "bedrock",
     providers = {
       bedrock = {
-        profile = "ai-ide-permission-set-284954390955",
-        region = "us-west-2",
-        model = "us.anthropic.claude-sonnet-4-20250514-v1:0",
+        aws_profile = "ai-ide-permission-set-284954390955",
+        aws_region = "us-west-2",
+        model = "us.anthropic.claude-sonnet-4-6",
         --    Retry your request with the ID or ARN of an inference profile that contains this model."
         -- https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html
         -- https://us-east-1.console.aws.amazon.com/bedrock/home?region=us-east-1#/inference-profiles
@@ -30,15 +30,6 @@ return {
           temperature = 1,
         }
       },
-      -- claude = {
-      --   endpoint = "https://api.anthropic.com",
-      --   model = "claude-sonnet-4-20250514",
-      --   timeout = 30000, -- Timeout in milliseconds
-      --     extra_request_body = {
-      --       temperature = 0.75,
-      --       max_tokens = 20480,
-      --     },
-      -- },
     },
   },
   dependencies = {
