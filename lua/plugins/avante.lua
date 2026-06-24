@@ -16,20 +16,20 @@ return {
     -- for example
     provider = "bedrock",
     providers = {
-      bedrock = {
-        aws_profile = "ai-ide-permission-set-284954390955",
-        aws_region = "us-west-2",
-        model = "us.anthropic.claude-sonnet-4-6",
-        --    Retry your request with the ID or ARN of an inference profile that contains this model."
-        -- https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html
-        -- https://us-east-1.console.aws.amazon.com/bedrock/home?region=us-east-1#/inference-profiles
-        use_cross_region_inference = false, -- optional
-        use_prompt_caching = true,         -- optional
-        extra_request_body = {
-          max_tokens = 20000,
-          temperature = 1,
-        }
-      },
+      -- bedrock = {
+      --   aws_profile = "ai-ide-permission-set-284954390955",
+      --   aws_region = "us-west-2",
+      --   model = "us.anthropic.claude-sonnet-4-6",
+      --   --    Retry your request with the ID or ARN of an inference profile that contains this model."
+      --   -- https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html
+      --   -- https://us-east-1.console.aws.amazon.com/bedrock/home?region=us-east-1#/inference-profiles
+      --   use_cross_region_inference = false, -- optional
+      --   use_prompt_caching = true,         -- optional
+      --   extra_request_body = {
+      --     max_tokens = 20000,
+      --     temperature = 1,
+      --   }
+      -- },
     },
   },
   dependencies = {
