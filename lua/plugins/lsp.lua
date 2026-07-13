@@ -135,6 +135,20 @@ return {
             }
           },
         },
+        yamlls = {
+          settings = {
+            yaml = {
+              validate = true,
+              schemaStore = {
+                enable = false,
+                url = "",
+              },
+              schemas = {
+                ["https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json"] =  "*.{yml,yaml}"
+              },
+            },
+          },
+        },
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
