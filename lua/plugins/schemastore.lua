@@ -1,3 +1,16 @@
-return  {
-  "b0o/schemastore.nvim"
-}
+return {
+  {
+    "b0o/schemastore.nvim"
+  },
+  {
+    "someone-stole-my-name/yaml-companion.nvim",
+    dependencies = {
+        { "neovim/nvim-lspconfig" },
+        { "nvim-lua/plenary.nvim" },
+        { "nvim-telescope/telescope.nvim" },
+    },
+    config = function()
+      require("telescope").load_extension("yaml_schema")
+    end,
+  }
+} 
